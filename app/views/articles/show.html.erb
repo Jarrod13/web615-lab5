@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<p>
+
+  <strong>User:</strong>
+  <%= link_to @article.user.name, @article.user %>
+</p>
+
+<ul>
+	<% @article.comments.each do |comments| %>
+	<li><%= comments.message %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
